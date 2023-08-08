@@ -1,0 +1,18 @@
+Airbotics Agent - Version 2023.08.08
+Copyright (c) 2023, Airbotics Inc.
+
+This product includes software developed at
+[DFKI Niedersachsen ] (https://www.dfki.de/en/web/about-us/locations-contact/osnabrueck-oldenburg/).
+
+- rospy_message_converter
+  Version: 2.0.1
+  License: Apache 2.0
+  Source: https://github.com/DFKI-NI/rospy_message_converter
+
+  Copyright (c) 2019-2022, Martin Günther (DFKI GmbH) and others
+  Copyright (c) 2013-2016, Brandon Alexander
+
+-----------------
+Additional modifications:
+
+1. Modified message_converter.py line 239 from original source to parse single byte to int

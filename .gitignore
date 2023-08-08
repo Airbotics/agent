@@ -1,0 +1,11 @@
+.vscode/
+.scratch
+credentials.zip
+*.pyc
+venv
+config.toml
+**/.Ds_Store
+.Ds_Store
+.env
+dist
+**/airbotics_agent.egg-info
