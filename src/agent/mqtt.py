@@ -15,7 +15,8 @@ class AirMqtt:
         'commands/send',
         'containers/config',
         'logs/config',
-        'data/config'
+        'data/config',
+        'vitals/config'
     ]
 
     bot_to_cloud_topics = {

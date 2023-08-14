@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "airbotics-agent"
-version = "2023.08.08"
+version = "2023.08.14"
 description = "The Airbotics cloud robotics agent"
 readme = "README.md"
 authors = [{ name = "Airbotics Inc.", email = "admin@airbotics.io" }]

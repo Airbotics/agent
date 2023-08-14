@@ -21,6 +21,7 @@ class AirAgent:
         self.vitals = AirVitals(self.config, self.on_vitals)
         self.logger = AirLogger(__name__, self.config).logger
         self.collect_logs = False
+        self.collect_vitals = False
         self.data_subscriptions = {}
 
 
@@ -44,6 +45,11 @@ class AirAgent:
             should_collect = data['enabled']
             self.logger.info(f'updating log configuration to {should_collect}')
             self.collect_logs = should_collect
+        
+        elif topic == 'vitals/config':
+            should_collect = data['enabled']
+            self.logger.info(f'updating vitals configuration to {should_collect}')
+            self.collect_vitals = should_collect
 
         elif topic == 'data/config':
             self.ros.clear_data_subscriptions()
@@ -130,7 +136,8 @@ class AirAgent:
         
 
     def on_vitals(self, vitals):
-        self.mqtt.pub(self.mqtt.bot_to_cloud_topics['vitals_ingest'], vitals, 0)
+        if self.collect_vitals:
+            self.mqtt.pub(self.mqtt.bot_to_cloud_topics['vitals_ingest'], vitals, 0)
     
 
     def handle_cmd(self, data):
